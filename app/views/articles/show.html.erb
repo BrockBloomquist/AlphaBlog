@@ -1,9 +1,27 @@
-<h1 class="text-xl mb-4">Showing Article</h1>
-<%= render @article %>
+<div id="page-content">
 
-<div class="d-flex">
-  <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-outline-info me-3" %>
-  <%= link_to "Back to articles", articles_path, class: "btn btn-outline-danger me-3"%>
+  <h1 class="text-center mt-4"><%= @article.title %></h1>
 
-  <%= button_to "Destroy this article", @article, method: :delete, class: "btn btn-outline-danger" %>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+          <div class="card text-center shadow mb-5 bg-white rounded">
+            <div class="card-header font-italic">
+              by Brock Bloomquist
+            </div>
+            <div class="card-body">
+              <div class="card-text text-start"><%= simple_format(@article.description) %></div>
+              <div class="d-flex justify-content-center">
+                <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info mx-2" %>
+                <%= button_to "Delete", @article, class: 'btn btn-outline-danger mx-2', method: :delete %>
+              </div>
+            </div>
+            <div class="card-footer text-muted">
+              <small>Created <%= time_ago_in_words(@article.created_at) %> ago, 
+                edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
