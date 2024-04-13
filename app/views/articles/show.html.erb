@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
+<h1 class="text-xl mb-4">Showing Article</h1>
 <%= render @article %>
 
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
+<div class="d-flex">
+  <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-outline-info me-3" %>
+  <%= link_to "Back to articles", articles_path, class: "btn btn-outline-danger me-3"%>
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
+  <%= button_to "Destroy this article", @article, method: :delete, class: "btn btn-outline-danger" %>
 </div>
