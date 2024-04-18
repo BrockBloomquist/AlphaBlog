@@ -1,6 +1,6 @@
 <% if obj.errors.any? %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <h4 class="alert-heading"><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h4>
+        <h4 class="alert-heading"><%= pluralize(obj.errors.count, "error") %> prohibited this <%= obj.class.name.downcase %> from being created:</h4>
 
         <ul>
         <% obj.errors.each do |error| %>
