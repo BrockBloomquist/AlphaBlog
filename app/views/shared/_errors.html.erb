@@ -1,9 +1,9 @@
-<% if @article.errors.any? %>
+<% if obj.errors.any? %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <h4 class="alert-heading"><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h4>
 
         <ul>
-        <% @article.errors.each do |error| %>
+        <% obj.errors.each do |error| %>
             <li><%= error.full_message %></li>
         <% end %>
         </ul>
