@@ -28,8 +28,9 @@
             Profile [<%= current_user.username %>]
           </a>
           <ul class="dropdown-menu">
-              <li> <%= link_to "View your Profile", user_path(current_user), class: "dropdown-item" %> </li>
+            <li> <%= link_to "View your Profile", user_path(current_user), class: "dropdown-item" %> </li>
             <li> <%= link_to "Edit your Profile", edit_user_path(current_user), class: "dropdown-item" %> </li>
+            <li> <%= button_to "Delete your Profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { turbo_confirm: "Are you sure?" } %> </li>
           </ul>
         </li>
           <li class="nav-item">
