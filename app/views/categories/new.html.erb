@@ -1,0 +1,25 @@
+<div id="page-content">
+    <h1 class="text-center mt-4">Create a new Category</h1>
+
+    <div class="container">
+    <%= render 'shared/errors', obj: @category %>
+
+    <%= form_with(model: @category, local: true, class: "shadow p-3 mb-3 bg-info rounded") do |form| %>    
+    <div class="row justify-content-center">
+        <div class="col-10 justify-content-center">
+            <div class="form-group row mt-4">
+                <%= form.label :name, "Category name", class: "col-2 col-form-label text-light" %>
+                <div class="col-10">
+                    <%= form.text_field :name, class: "form-control shadow rounded", placeholder: "Enter a name" %>
+                </div>
+            </div>
+
+            <div class="form-group mt-3 d-flex justify-content-around">
+                <%= form.submit class: "btn btn-outline-light btn-lg" %>
+            </div>
+        <% end %>
+        </div>
+    </div>
+    <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "d-flex justify-content-around text-info" %>
+    </div>
+</div>
