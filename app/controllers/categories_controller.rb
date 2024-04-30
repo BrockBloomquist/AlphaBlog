@@ -12,14 +12,14 @@ class CategoriesController < ApplicationController
                 format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
                 format.json { render :show, status: :created, location: @category }
             else 
-                format.html { render :new  }
-                format.json { render json: @category.errors }
+                format.html { render :new, status: 300 }
+                format.json { render json: @category.errors, status: :unprocessable_entity}
             end
         end
     end
 
     def index
-    
+      @categories = Category.paginate(page: params[:page], per_page: 5)
     end
 
     def show
