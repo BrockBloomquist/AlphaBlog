@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to user
       else
         flash.now[:alert] = "There was something wrong with your login details"
-        render 'new'
+        render :new, status: 401
       end
     end
 
